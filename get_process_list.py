@@ -4,6 +4,8 @@ import subprocess
 import psutil
 import pprint
 
+
+##### getting process list and writing it to a file #####
 processFile = open('processFile.lst', 'w')
 
 for proc in psutil.process_iter():
@@ -18,6 +20,8 @@ for proc in psutil.process_iter():
 
 processFile.close()
 
+
+#### reading process from file and sorting it ######
 processFile = open('processFile.lst', 'r')
 
 processList = []
@@ -39,6 +43,8 @@ for pinfo in sortedProcessList:
 
 processFile.close()
 
+
+##### reading process list from file and outputing it ####
 processFile = open('sortedProcessFile.lst', 'r')
 
 for line in processFile.readlines():
